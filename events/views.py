@@ -137,6 +137,7 @@ class MeView(generics.RetrieveUpdateAPIView):
 # ============================================================
 # REGISTRATIONS
 # ============================================================
+
 class RegistrationListCreateView(generics.ListCreateAPIView):
     serializer_class = RegistrationSerializer
     permission_classes = [IsAuthenticated]
@@ -186,6 +187,8 @@ class RegistrationListCreateView(generics.ListCreateAPIView):
             )
 
         return queryset
+
+
 class RegistrationDetailView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = RegistrationSerializer
     permission_classes = [IsAuthenticated]
@@ -228,6 +231,7 @@ class RegistrationDetailView(generics.RetrieveUpdateDestroyAPIView):
         instance.save(
             update_fields=["status", "checked_in"]
         )
+
 
 class CheckInView(generics.GenericAPIView):
     permission_classes = [IsAuthenticated]
@@ -406,9 +410,19 @@ class UserLoginView(
             data=request.data
         )
 
-        serializer.is_valid(
-            raise_exception=True
-        )
+        # Temporary login debugging
+        print("LOGIN DATA:", request.data)
+
+        if not serializer.is_valid():
+            print(
+                "LOGIN ERRORS:",
+                serializer.errors
+            )
+
+            return Response(
+                serializer.errors,
+                status=status.HTTP_400_BAD_REQUEST
+            )
 
         user = serializer.validated_data["user"]
 

@@ -1,0 +1,20 @@
+[33mcommit 9559dc942569284fd3139efe4fed5043515b1b5f[m
+Author: Pranjal <pranjal.hon24@sanjivani.edu.in>
+Date:   Sat Oct 3 11:19:07 2026 +0530
+
+    Current project progress
+
+ frontend/src/App.css                      | 1813 [32m+++++++++++++++++++++++++++++[m
+ frontend/src/App.jsx                      |  298 [32m+++[m[31m--[m
+ frontend/src/api.js                       |   14 [32m+[m
+ frontend/src/pages/AdminDashboard.jsx     |  338 [32m++++++[m
+ frontend/src/pages/AdminEvents.jsx        |  146 [32m+++[m
+ frontend/src/pages/AdminFeedback.jsx      |  159 [32m+++[m
+ frontend/src/pages/AdminRegistrations.jsx |  145 [32m+++[m
+ frontend/src/pages/AdminReports.jsx       |  237 [32m++++[m
+ frontend/src/pages/AdminUsers.jsx         |  134 [32m+++[m
+ frontend/src/pages/AdminVenues.jsx        |  139 [32m+++[m
+ frontend/src/pages/Events.jsx             | 1592 [32m++++++++++++++++++++[m[31m-----[m
+ frontend/src/pages/Settings.jsx           |    2 [32m+[m[31m-[m
+ git                                       |    0
+ 13 files changed, 4680 insertions(+), 337 deletions(-)
